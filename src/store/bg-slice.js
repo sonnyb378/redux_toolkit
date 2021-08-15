@@ -17,9 +17,9 @@ const bgSlice = createSlice({
 	}
 });
 
-const bgActions = bgSlice.actions;
-const bgReducer = bgSlice.reducer;
-export { bgActions, bgReducer };
+// const bgActions = bgSlice.actions;
+// const bgReducer = bgSlice.reducer;
+// export { bgActions, bgReducer };
 
-// export const bgActions = bgSlice.actions;
-// export default bgSlice.reducer;
+export const bgActions = bgSlice.actions;
+export default bgSlice.reducer;

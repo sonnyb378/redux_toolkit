@@ -3,7 +3,7 @@ import React from 'react';
 import './App.css';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { setBlueBG, setRedBG } from './store';
+import { bgActions } from './store/bg-slice';
 
 const App = () => {
 	const currentColor = useSelector((state) => state.bg.bgColor);
@@ -12,9 +12,9 @@ const App = () => {
 
 	const onChangeColor = (color) => {
 		if (color === 'red') {
-			dispatch(setRedBG());
+			dispatch(bgActions.setRedBG());
 		} else {
-			dispatch(setBlueBG());
+			dispatch(bgActions.setBlueBG());
 		}
 	};
 

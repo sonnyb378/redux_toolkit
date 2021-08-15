@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import { bgReducer, bgActions } from './bg-slice';
+import bgReducer from './bg-slice';
 // import bgReducer, { bgActions } from './bg-slice';
 
 const store = configureStore({
@@ -9,6 +9,6 @@ const store = configureStore({
 	}
 });
 
-export const { setBlueBG, setRedBG } = bgActions;
+// export const { setBlueBG, setRedBG } = bgActions;
 
 export default store;

@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+import React from 'react';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { useSelector, useDispatch } from 'react-redux';
+import { setBlueBG, setRedBG } from './store';
+
+const App = () => {
+	const currentColor = useSelector((state) => state.bg.bgColor);
+
+	const dispatch = useDispatch();
+
+	const onChangeColor = (color) => {
+		if (color === 'red') {
+			dispatch(setRedBG());
+		} else {
+			dispatch(setBlueBG());
+		}
+	};
+
+	return (
+		<div className="App" style={{ backgroundColor: currentColor }}>
+			<button onClick={onChangeColor.bind(this, 'red')}>Red</button>
+			<button onClick={onChangeColor.bind(this, 'blue')}>Blue</button>
+		</div>
+	);
+};
 
 export default App;
